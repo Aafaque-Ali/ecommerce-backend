@@ -28,6 +28,6 @@ public class User {
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	
-	@Column(nullable = false, unique = true)
-	private String role;		//USER or ADMIN
+	@Column(nullable = false)
+	private String role = "USER";		//USER or ADMIN
 }

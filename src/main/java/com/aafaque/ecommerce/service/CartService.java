@@ -86,4 +86,13 @@ public class CartService {
         cartRepository.save(cart);
     }
     
+    @Transactional
+    public void updateQuantity(Long cartItemId, Integer quantity) {
+        CartItem item = cartItemRepository.findById(cartItemId).orElse(null);
+        if (item != null) {
+            item.setQuantity(quantity);
+            cartItemRepository.save(item);
+        }
+    }
+    
 }
